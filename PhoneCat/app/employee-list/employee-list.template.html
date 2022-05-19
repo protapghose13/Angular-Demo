@@ -1,0 +1,39 @@
+<div class="searchbar">
+  <!--Sidebar content-->
+  <p>
+    <span>Search :</span>
+    <input ng-model="$ctrl.query" />
+  </p>
+
+  <p>
+    <span>Sort by :</span> 
+    <select ng-model="$ctrl.orderProp">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>
+  </p>
+</div>
+
+<div class="table-data">
+  <!--Body content-->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Age</th>
+        <th>First Name</th>
+        <th>LastName</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" ng-click="clicked(phone)">
+        <th>{{phone.id}}</th>
+        <th>{{phone.age}}</th>
+        <th>{{phone.imageUrl}}</th>
+        <th>{{phone.name}}</th>
+        <th>{{phone.snippet}}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>

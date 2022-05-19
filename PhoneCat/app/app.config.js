@@ -14,6 +14,9 @@ angular.
         when('/phonelisttable', {
           template: '<phone-list-table></phone-list-table>'
         }).
+        when('/employees', {
+          template: '<employee-list></employee-list>'
+        }).
         otherwise('/phones');
     }
   ]);
