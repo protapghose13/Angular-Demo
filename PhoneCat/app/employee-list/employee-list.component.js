@@ -1,17 +1,21 @@
 'use strict';
 
-// Register `phoneList` component, along with its associated controller and template
+// Register `employeeList` component, along with its associated controller and template
 angular.
   module('employeeList').
   component('employeeList', {
     templateUrl: 'employee-list/employee-list.template.html',
-    controller: ['Phone', '$scope',
-      function EmployeeListController(Phone, $scope) {
-        this.phones = Phone.query();
-        this.orderProp = 'age';
+    controller: ['employeeService', '$scope',
+      function EmployeeListController(employeeService, $scope) {
+        employeeService.getEmployees().then(function (employees) {
+          $scope.employees = employees;
+        });
+        this.orderProp = 'firstName';
 
-        $scope.clicked = function(phone){
-          window.location = "#!/phones/" + phone.id;
+        var p = this;
+        $scope.clicked = function(employee){
+          p.employeeName = employee.firstName;
+          window.location = "#!/employees/" + employee.id;
         }
       }
     ]

@@ -28,11 +28,11 @@
     </thead>
     <tbody>
       <tr ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" ng-click="clicked(phone)">
-        <th>{{phone.age}}</th>
-        <th>{{phone.id}}</th>
-        <th>{{phone.imageUrl}}</th>
-        <th>{{phone.name}}</th>
-        <th>{{phone.snippet}}</th>
+        <td>{{phone.age}}</td>
+        <td>{{phone.id}}</td>
+        <td>{{phone.imageUrl}}</td>
+        <td>{{phone.name}}</td>
+        <td>{{phone.snippet}}</td>
       </tr>
     </tbody>
   </table>

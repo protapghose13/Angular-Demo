@@ -1,9 +1,9 @@
 'use strict';
 
-describe('employeeList', function() {
+describe('employeeDetail', function() {
 
-  // Load the module that contains the `employeeList` component before each test
-  beforeEach(module('employeeList'));
+  // Load the module that contains the `employeeDetail` component before each test
+  beforeEach(module('employeeDetail'));
 
   // Test the controller
   describe('PhoneListController', function() {
@@ -14,7 +14,7 @@ describe('employeeList', function() {
       $httpBackend.expectGET('phones/phones.json')
                   .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 
-      ctrl = $componentController('employeeList');
+      ctrl = $componentController('employeeDetail');
     }));
 
     it('should create a `phones` property with 2 phones fetched with `$http`', function() {

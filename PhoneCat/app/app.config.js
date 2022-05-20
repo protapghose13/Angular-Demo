@@ -17,6 +17,9 @@ angular.
         when('/employees', {
           template: '<employee-list></employee-list>'
         }).
+        when('/employees/:employeeId', {
+          template: '<employee-list></employee-list>'
+        }).
         otherwise('/phones');
     }
   ]);
